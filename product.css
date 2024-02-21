@@ -1,0 +1,16 @@
+.card-head
+{
+    text-align: center;
+    color:indigo;
+    border-bottom: 2px groove rgb(140, 59, 198);
+    border-top: 2px groove rgb(140, 59, 198);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: 0px 1px 0px grey ,
+                 0px 2px 0px grey ,
+                 0px 3px 0px grey ,
+                 0px 4px 0px grey ,
+                 0px 5px 0px grey ;
+                 font-size: bold;
+}

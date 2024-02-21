@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Picture/logo-am.jpg">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Alpha Mobiles | Sign-Up Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+       
+    </style>
+</head>
+<body>
+    <div class="row vh-100 g-0">
+        
+        <div class="col-lg-6 ">
+            <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
+                <div class="col col-sm-6 col-lg-7 col-xl-6">
+                    <a href="#" class="d-flex justify-content-center mb-4">
+                        <img src="./Picture/logo-am.jpg" alt="AM LOGO">
+                    </a>
+                    
+                    <div class="text-align mb-5">
+                        <h2 class="fw-bold  d-flex justify-content-center"> ALPHA MOBILES</h4>
+                        <p class="text-secondary d-flex justify-content-center"> Create Your Account</p> 
+                    </div>
+
+                    
+                        <!-- <form action="#" > -->
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-person-fill"></i>
+                                </span>
+                                <input type="text" required class="form-control form-control-lg-fs-6 " placeholder="Username" id="username">
+                                <span id="usernameerror" class="error"></span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-envelope-at"></i>
+                                </span>
+                                <input type="email" required class="form-control form-control-lg-fs-6 " placeholder="name@example.com" id="mailid">
+                                <span id="mailid" class="error"></span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-file-lock2-fill"></i>
+                                </span>
+                                <input type="password" required class="form-control form-control-lg-fs-6 " placeholder="Password" id="password">
+                                <button  class="input-group-text" onclick="pswd()"><i class="bi bi-eye-fill"></i></button>
+                                <span id="passworderror" class="error"></span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-file-lock2-fill"></i>
+                                </span>
+                                <input type="password" required class="form-control form-control-lg-fs-6 " placeholder="Confirm Password" id="c-password">
+                                <button  class="input-group-text" onclick="cpswd()"><i class="bi bi-eye-fill"></i></button>
+                                <span id="cpassworderror" class="error"></span>
+                            </div>
+                        
+                        
+                        
+                            <div class="position-relative">
+                            <hr class="text-secondary divider">
+                            <div class="div-cont">or</div>
+                            </div>
+                        
+
+                        <button class="btn btn-outline-secondary btn-sm w-100 mb-3" ><i class="bi bi-google" style="color: brown;"></i>  Sign-Up With Google</button>
+                        <button class="btn btn-outline-secondary btn-sm w-100" ><i class="bi bi-facebook" style="color:blue;"></i>  Sign-Up With Facebook</button>
+
+                        <div class="input-group mb-3 d-flex justify-content-between">
+                            <!-- <div class="form-check"> 
+                                <input type="checkbox" required class="form-check-input" id="form-check">
+                                <label for="form-check" class="form-check-label text-secondary" ><small>Remember The Details </small></label>
+                            </div> -->
+                            <!-- <div>
+                                <small><a href="#" style="text-decoration: none;">Forget Password ?</a></small>
+                            </div> -->
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm w-100" onclick="validate()">SignUp</button>
+                        
+                    <!-- </form> -->
+                        <div class="text-center">
+                            <small>Already A Customer ? <a href="login.html" class="fw-bold" style="text-decoration: none;">Log-In</a></small>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-6 position-relative d-none d-lg-block">
+            <div class="bg-holder" style="background-image:url(./Picture/signup\ bg.jpg)"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+
+        function pswd()
+        {
+            let ps = document.getElementById("password");
+            ps.type = "text";
+            
+        }
+        function cpswd()
+        {
+            let cps = document.getElementById("c-password");
+            cps.type = "text";
+            
+        }
+
+
+
+        function validate() 
+        {
+            let username = document.getElementById('username').value;
+            let mailid = document.getElementById('mailid').value;
+            let password = document.getElementById('password').value;
+            let cpassword = document.getElementById('c-password').value;
+
+            function validateEmail(email) 
+            {
+                const em = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return em.test(email);
+            }
+
+            
+           
+            if (password == cpassword  && mailid != "" && username != "" && validateEmail(mailid)  )
+            {
+                alert("Sign Up Sucessful");
+                // console.log("-----fn cal");
+                window.location.href = "Home.html"
+            }
+            else
+            {
+                alert("Enter Valid Details");
+            }
+            
+            
+        }
+        
+    </script>
+
+</body>
+</html>
